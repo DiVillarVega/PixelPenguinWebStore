@@ -1,6 +1,8 @@
+{% load static %}
 <!doctype html>
 <html lang="es">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Venta de videojuegos">
@@ -8,43 +10,45 @@
     <!--TIPO DE LETRA-->
     <link href="https://fonts.googleapis.com/css2?family=Cute+Font&family=Pixelify+Sans:wght@400..700&family=Tac+One&family=Teko:wght@300..700&display=swap" rel="stylesheet">
     <!--ESTE ES EL ICONO DE LA PÁGINA-->
-    <link rel="icon" href="img/IconoPinguino.jpg"> 
+    <link rel="icon" href="img/IconoPinguino.jpg">
 
     <!--ESTE ES EL TÍTULO DE LA PÁGINA-->
     <title>PixelPenguin - Bodega</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
     <style>
-      label{
-          font-weight: bolder;
-      }
-      .error{
-          color: red;
-      }
+        label {
+            font-weight: bolder;
+        }
+        
+        .error {
+            color: red;
+        }
     </style>
-  </head>
-  <body>
+</head>
+
+<body>
     <div id="menuA"></div>
     <br>
     <br>
 
 
-<!-- inicio -->
-<main role="main">
-  <div class="container">
-    <section class="text center">
-      <h1 class="cute-font-regular neon">MANTENEDOR DE BODEGA</h1>
-      <br>
-      <form method="POST" id="formulario_bodega" action="">
-        <div class="container-fluid">
-          <div class="row">
-          <!-- campos mantenedor bodega -->
-            <div class="col-sm-12 col-md-6 col-lg-6">
-              <!-- Categoría -->
-              <div class="md-3 fw-bold">
-                <label for="categoria" class="form-label letra">Categoría</label> <br>
-                <div class="dropdown" id="categoria" name="categoria">
-                  <select id="categoria" class="form-control" name="categoria">
+    <!-- inicio -->
+    <main role="main">
+        <div class="container">
+            <section class="text center">
+                <h1 class="cute-font-regular neon">MANTENEDOR DE BODEGA</h1>
+                <br>
+                <form method="POST" id="formulario_bodega" action="">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <!-- campos mantenedor bodega -->
+                            <div class="col-sm-12 col-md-6 col-lg-6">
+                                <!-- Categoría -->
+                                <div class="md-3 fw-bold">
+                                    <label for="categoria" class="form-label letra">Categoría</label> <br>
+                                    <div class="dropdown" id="categoria" name="categoria">
+                                        <select id="categoria" class="form-control" name="categoria">
                       <option value="">Seleccione una categoría</option>
                       <option value="1">Acción</option>
                       <option value="2">Hack and slash</option>
@@ -54,14 +58,14 @@
                       <option value="6">Defensa de Torres</option>
                       
                   </select>
-                </div>
-              </div>              
-              <br>
-              <!-- Título -->
-              <div class="md-3 fw-bold">
-                <label for="titulo" class="form-label letra">Título</label> <br>
-                <div class="dropdown" id="titulo">
-                  <select id="titulo" class="form-control" name="titulo">
+                                    </div>
+                                </div>
+                                <br>
+                                <!-- Título -->
+                                <div class="md-3 fw-bold">
+                                    <label for="titulo" class="form-label letra">Título</label> <br>
+                                    <div class="dropdown" id="titulo">
+                                        <select id="titulo" class="form-control" name="titulo">
                     <option value="">Seleccione un título</option>
                     <option value="1">Bread & Fred</option>
                     <option value="2">Cyberpunk 2077</option>
@@ -76,57 +80,52 @@
                     <option value="11">FIFA 21</option>
                     <option value="12">Call of Duty: Modern Warfare</option>
                   </select>
-                </div>
-              </div>
-              <br>
+                                    </div>
+                                </div>
+                                <br>
 
-              <!-- Cantidad -->           
-              <div class="md-3 fw-bold">
-                <div class="form-group">
-                  <label for="cantidad" class="form-label letra">Cantidad</label> <br>
-                  <input
-                    type="number"
-                    class="form-control-md"
-                    id="cantidad"
-                    name="cantidad" 
-                    placeholder="Ingrese número">
-                </div>
-              </div>
-              <br>
-              <!-- Botones -->
-              <button type="submit" class="btn btn-primary boton_registro">Agregar</button>
-              <button type="reset" class="btn btn-primary boton_registro">Nuevo</button>
-            </div>
-            <!-- foto de perfil -->
-            <div class="col-sm-12 col-md-6 col-lg-4">
-              <br>
-              <div class="image-container">
-                <img src="img/joystick.jpg" alt="" class="user-image">              
-              </div>
-            </div>                                                
-            <!-- fin foto perfil -->
-          </div>
-          <br>
-        </div>
-        <table class="table table-hover">
-          <thead>
-            <th scope="col" class="text-center"></th>
-            <th scope="col" class="text-center d-none d-lg-block d-lg-table-cell">ID</th>
-            <th scope="col" class="text-center">Categoría</th>
-            <th scope="col" class="text-center">Título</th>
-            <th scope="col" class="text-center">Estado</th>
-            <th scope="col" class="text-center">Opciones</th>
-          </thead>
-          <tbody>
-            <!-- Primera linea -->
-            <tr>
-              <td scope="row" class="text-center"></td>
-              <td scope="col" class="text-center d-none d-lg-block d-lg-table-cell">24</td>
-              <td scope="col" class="text-center">Acción</td>
-              <td scope="col" class="text-center">Cyberpunk 2077</td>
-              <td scope="col" class="text-center">Vendido</td>
-              <td scope="col" class="text-center">
-                <button type="button" href="#" class="btn btn-primary btn-sm">Eliminar
+                                <!-- Cantidad -->
+                                <div class="md-3 fw-bold">
+                                    <div class="form-group">
+                                        <label for="cantidad" class="form-label letra">Cantidad</label> <br>
+                                        <input type="number" class="form-control-md" id="cantidad" name="cantidad" placeholder="Ingrese número">
+                                    </div>
+                                </div>
+                                <br>
+                                <!-- Botones -->
+                                <button type="submit" class="btn btn-primary boton_registro">Agregar</button>
+                                <button type="reset" class="btn btn-primary boton_registro">Nuevo</button>
+                            </div>
+                            <!-- foto de perfil -->
+                            <div class="col-sm-12 col-md-6 col-lg-4">
+                                <br>
+                                <div class="image-container">
+                                    <img src="img/joystick.jpg" alt="" class="user-image">
+                                </div>
+                            </div>
+                            <!-- fin foto perfil -->
+                        </div>
+                        <br>
+                    </div>
+                    <table class="table table-hover">
+                        <thead>
+                            <th scope="col" class="text-center"></th>
+                            <th scope="col" class="text-center d-none d-lg-block d-lg-table-cell">ID</th>
+                            <th scope="col" class="text-center">Categoría</th>
+                            <th scope="col" class="text-center">Título</th>
+                            <th scope="col" class="text-center">Estado</th>
+                            <th scope="col" class="text-center">Opciones</th>
+                        </thead>
+                        <tbody>
+                            <!-- Primera linea -->
+                            <tr>
+                                <td scope="row" class="text-center"></td>
+                                <td scope="col" class="text-center d-none d-lg-block d-lg-table-cell">24</td>
+                                <td scope="col" class="text-center">Acción</td>
+                                <td scope="col" class="text-center">Cyberpunk 2077</td>
+                                <td scope="col" class="text-center">Vendido</td>
+                                <td scope="col" class="text-center">
+                                    <button type="button" href="#" class="btn btn-primary btn-sm">Eliminar
               </td>
             </tr>
             <!-- Segunda linea -->
@@ -139,17 +138,17 @@
               <td scope="col" class="text-center">
                 <button type="button" href="#" class="btn btn-primary btn-sm">Eliminar
                 </button>
-              </td>
-            </tr>
-            <!-- Tercera linea-->
-            <tr>
-              <td scope="row" class="text-center"></td>
-              <td scope="col" class="text-center">18</td>
-              <td scope="col" class="text-center">Hack and slash</td>
-              <td scope="col" class="text-center">Hi-Fi Rush</td>
-              <td scope="col" class="text-center">Entregado</td>
-              <td scope="col" class="text-center">
-                <button type="button" href="#" class="btn btn-primary btn-sm">Eliminar
+                                </td>
+                            </tr>
+                            <!-- Tercera linea-->
+                            <tr>
+                                <td scope="row" class="text-center"></td>
+                                <td scope="col" class="text-center">18</td>
+                                <td scope="col" class="text-center">Hack and slash</td>
+                                <td scope="col" class="text-center">Hi-Fi Rush</td>
+                                <td scope="col" class="text-center">Entregado</td>
+                                <td scope="col" class="text-center">
+                                    <button type="button" href="#" class="btn btn-primary btn-sm">Eliminar
               </td>
             </tr>
           </tbody>
