@@ -63,8 +63,8 @@
                                 <div class="col text-center">
                                     <button type="submit" class="btn btn-primary boton_registro">Ingresar</button>
                                     <br><br>
-                                    <a class="letra" href="registro.html">Registrarse</a>
-                                    <a class="letra" href="registro.html">Olvide mi contraseña</a>
+                                    <a class="letra" href="{% url 'registro' %}">Registrarse</a>
+                                    <a class="letra" href="{% url 'registro' %}">Olvide mi contraseña</a>
 
                                 </div>
 
@@ -74,7 +74,7 @@
                     </div>
                     <div class="text-center">
                         <br><br>
-                        <a class="letra" href="miscompras.html">Presiona aqui para simular que ingresaste como Cliente</a>
+                        <a class="letra" href="{% url 'miscompras' %}">Presiona aqui para simular que ingresaste como Cliente</a>
                         <br><br><br>
                         <a class="letra" href="administracion.html">Presiona aqui para simular que ingresaste como Administrador</a>
                         <br><br>
