@@ -18,7 +18,7 @@ urlpatterns = [
     path('miscompras', miscompras, name='miscompras'),
     path('carrito', carrito, name='carrito'),
     path('ropa', ropa, name='ropa'),
-    path('poblar', poblar, name='poblar'),
+    path('poblar', poblar, name='poblar')
     
     #path('salir', salir, name='salir'),
     #path('cambiar_password', cambiar_password, name='cambiar_password'),
