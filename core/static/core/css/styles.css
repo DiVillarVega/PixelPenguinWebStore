@@ -3,6 +3,11 @@
   border: 1px solid red;
 }  */
 
+.error {
+  color: red;
+  font-weight: bold;
+}
+
 body {  
   background: linear-gradient(to right, #180f28, #4357ab, #130823);
 }
