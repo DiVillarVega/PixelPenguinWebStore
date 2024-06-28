@@ -389,10 +389,10 @@ def agregar_producto_al_carrito(request, producto_id):
 
     if es_personal_autenticado_y_activo(request.user):
         messages.error(request, f'Para poder comprar debes tener cuenta de Cliente, pero tu cuenta es de {request.user.perfil.tipo_usuario}.')
-        return redirect(inicio)
+        return redirect(index)
     elif es_usuario_anonimo(request.user):
         messages.info(request, 'Para poder comprar, primero debes registrarte como cliente.')
-        return redirect(registrarme)
+        return redirect(registro)
 
     perfil = request.user.perfil
     producto = Producto.objects.get(id=producto_id)

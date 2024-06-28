@@ -29,6 +29,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -42,6 +43,15 @@ INSTALLED_APPS = [
     'rest_framework',
     'core',
     'apirest',
+    'debug_toolbar',
+]
+
+
+# Configuración para mostrar Debug Toolbar solo en entorno local
+DEBUG_TOOLBAR_PATCH_SETTINGS = False  # Configuración opcional, puede ser True en ciertos casos
+INTERNAL_IPS = [
+    '127.0.0.1',  # Dirección IP de localhost
+    '::1',        # IPv6 de localhost
 ]
 
 MIDDLEWARE = [
@@ -52,6 +62,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'tienda.urls'
