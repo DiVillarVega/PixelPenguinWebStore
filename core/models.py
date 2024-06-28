@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator, MinValueValidator
-#from core.templatetags.custom_filters import formatear_dinero
+from core.templatetags.custom_filters import formatear_dinero
 from django.db import models
 from django.db.models import Min
 from django.db import connection

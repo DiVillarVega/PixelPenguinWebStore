@@ -11,7 +11,8 @@
                 <br>
 
                 <!-- Formulario de registro de cliente -->
-                <form method="POST" id="formulario_registro" action="">
+                <form method="POST" id="formulario_registro" enctype="multipart/form-data">
+                    {% csrf_token %}
                     <div class="container-fluid">
                         <div class="row">
                             <!-- campos del registro de usuario -->

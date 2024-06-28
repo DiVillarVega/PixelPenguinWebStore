@@ -23,89 +23,69 @@
                         <th scope="col">Opciones</th>
                     </thead>
                     <tbody>
+                        {% for item in detalle_carrito %}
+                            <tr>
+                                <td> {{ item.id }} </td>
+                                <td> {{ item.producto.categoria.nombre }} </td>
+                                <td> {{ item.producto.nombre }} </td>
+                                <td> {{ item.precio|formatear_dinero }} </td>
+                                <td> {{ item.descuento_subscriptor|formatear_porcentaje }} </td>
+                                <td> {{ item.descuento_oferta|formatear_porcentaje }} </td>
+                                <td> {{ item.descuento_total|formatear_porcentaje }} </td>
+                                <td class="text-end"> {{ item.descuentos|formatear_dinero }} </td>
+                                <td class="text-end"> {{ item.precio_a_pagar|formatear_dinero }} </td>
+                                <td>
+                                    <div class="btn-group">
+                                        <a href="{% url 'ficha' item.producto.id %}" class="btn btn-sm btn-primary"> Detalle </a> 
+                                        <a href="{% url 'eliminar_producto_en_carrito' item.id %}" class="btn btn-sm btn-danger"> Eliminar </a> 
+                                    </div>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    <tfoot>
                         <tr>
-                            <td scope="row">1234</td>
-                            <td scope="col" class="d-none d-lg-block d-lg-table-cell">Hack and slash</td>
-                            <td scope="col">Hi-Fi Rush</td>
-                            <td scope="col" class="text-center">$50.000</td>
-                            <td scope="col" class="text-center d-none d-lg-block d-lg-table-cell">5%</td>
-                            <td scope="col" class="text-center d-none d-lg-block d-lg-table-cell">10%</td>
-                            <td scope="col" class="text-center d-none d-lg-block d-lg-table-cell">15%</td>
-                            <td scope="col" class="text-center d-none d-lg-block d-lg-table-cell">$7.500</td>
-                            <td scope="col" class="text-center">$42.500</td>
-                            <td scope="col">
-                                <button type="button" href="#" class="btn btn-primary btn-sm">Eliminar</button>
-                            </td>
-
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="fw-bold"> Precio sin IVA </td>
+                            <td class="fw-bold text-end"> {{ monto_sin_iva|formatear_dinero }} </td>
+                            <td></td>
                         </tr>
-
-                        <td scope="row">1328</td>
-                        <td scope="col" class="d-none d-lg-block d-lg-table-cell">Hack and slash</td>
-                        <td scope="col">God of War</td>
-                        <td scope="col" class="text-center">$65.000</td>
-                        <td scope="col" class="text-center d-none d-lg-block d-lg-table-cell">5%</td>
-                        <td scope="col" class="text-center d-none d-lg-block d-lg-table-cell">30%</td>
-                        <td scope="col" class="text-center d-none d-lg-block d-lg-table-cell">35%</td>
-                        <td scope="col" class="text-center d-none d-lg-block d-lg-table-cell">$22.750</td>
-                        <td scope="col" class="text-center">$42.250</td>
-                        <td scope="col">
-                            <button type="button" href="#" class="btn btn-primary btn-sm">Eliminar</button>
-                        </td>
-                        <tfoot>
-                            <tr>
-                                <td></td>
-                                <td class="text-center d-none d-lg-block d-lg-table-cell"></td>
-                                <td></td>
-                                <td class="text-center d-none d-lg-block d-lg-table-cell"></td>
-                                <td class="text-center d-none d-lg-block d-lg-table-cell"></td>
-                                <td class="text-center d-none d-lg-block d-lg-table-cell"></td>
-                                <td class="text-center d-none d-lg-block d-lg-table-cell"></td>
-                                <td style="font-weight: bold">
-                                    Precio sin IVA
-                                </td>
-                                <td>
-                                    <input readonly type="text" name="sinIva" id="noiva" class="text-center" placeholder="$68.648">
-                                </td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td class="text-center d-none d-lg-block d-lg-table-cell"></td>
-                                <td></td>
-                                <td class="text-center d-none d-lg-block d-lg-table-cell"></td>
-                                <td class="text-center d-none d-lg-block d-lg-table-cell"></td>
-                                <td class="text-center d-none d-lg-block d-lg-table-cell"></td>
-                                <td class="text-center d-none d-lg-block d-lg-table-cell"></td>
-                                <td style="font-weight: bold">
-                                    Valor del IVA (19%)
-                                </td>
-                                <td>
-                                    <input readonly type="text" name="conIva" id="iva" class="text-center" placeholder="$16.102"></td>
-                                <td scope="col">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td class="text-center d-none d-lg-block d-lg-table-cell"></td>
-                                <td></td>
-                                <td class="text-center d-none d-lg-block d-lg-table-cell"></td>
-                                <td class="text-center d-none d-lg-block d-lg-table-cell"></td>
-                                <td class="text-center d-none d-lg-block d-lg-table-cell"></td>
-                                <td class="text-center d-none d-lg-block d-lg-table-cell"></td>
-                                <td style="font-weight: bold">
-                                    Total a pagar
-                                </td>
-                                <td><input readonly type="text" name="TotalAPagar" id="totalAPagar" class="text-center" placeholder="$84.750"></td>
-                                <td scope="col">
-                                </td>
-                            </tr>
-                        </tfoot>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="fw-bold"> Valor del IVA (19%) </td>
+                            <td class="fw-bold text-end"> {{ iva|formatear_dinero }} </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="fw-bold"> Total a pagar </td>
+                            <td class="fw-bold text-end"> {{ total_a_pagar|formatear_dinero }} </td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
                     </tbody>
                 </table>
                 <div class="row">
                     <div class="col text-center">
-                        <button type="submit" class="btn btn-primary boton_registro">Pagar</button>
-                        <button type="reset" class="btn btn-primary boton_registro">Cancelar compra</button>
+                        <a href="{% url 'vaciar_carrito' %}" class="btn btn-danger"> Vaciar carrito </a>
+                        <a href="#" class="btn btn-success"> Continuar al pago </a>
                     </div>
                 </div>
 

@@ -13,6 +13,8 @@
                 <!-- Formulario de Ingreso de cliente -->
                 <form method="POST" id="formulario_login" action="">
                     <div class="cuadro_login">
+
+                        {% csrf_token %} 
                         <div>
                             <!-- campos del ingreso de usuario -->
                             <div>
@@ -56,6 +58,7 @@
             </section>
         </div>
     </main>
+    {% include 'common/combobox_usuarios.html' %}
 {% endblock content %}
 
 {% block script %}

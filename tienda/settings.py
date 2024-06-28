@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'rest_framework',
     'core',
-    #'apirest',
+    'apirest',
 ]
 
 MIDDLEWARE = [
@@ -52,7 +52,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    #'core.middlewares.MyAppMessageMiddleware',
 ]
 
 ROOT_URLCONF = 'tienda.urls'
@@ -68,7 +67,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                #'core.context_processors.global_render',
+                'core.context_processors.global_render',
             ],
         },
     },
@@ -182,5 +181,6 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'info.faithfulpet@gmail.com'  # Reemplaza con tu dirección de correo Gmail
-EMAIL_HOST_PASSWORD = 'qilcuwkdxlerbqae' # Reemplaza con tu contraseña de "aplicación generada"
+EMAIL_HOST_USER = 'caro.aguirre@duocuc.com'  # Reemplaza con tu dirección de correo Gmail
+EMAIL_HOST_PASSWORD = '123456' # Reemplaza con tu contraseña de "aplicación generada"
+X_FRAME_OPTIONS = 'SAMEORIGIN'
